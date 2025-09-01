@@ -182,8 +182,9 @@ function closeModal() {
 function learnMore(solutionType) {
     const solutions = {
         agriculture: {
-            title: 'Sustainable Agriculture Solutions',
+            title: '🌾 Sustainable Agriculture Solutions',
             description: 'Comprehensive programs to boost food production while protecting the environment',
+            icon: '🌱',
             details: [
                 'Climate-resilient seed varieties that can withstand drought and flooding',
                 'Precision agriculture using satellite monitoring and IoT sensors',
@@ -191,11 +192,19 @@ function learnMore(solutionType) {
                 'Market linkage programs connecting farmers to buyers',
                 'Agricultural financing and insurance programs',
                 'Training on post-harvest loss reduction techniques'
-            ]
+            ],
+            statistics: {
+                'Farmers Trained': '45,000+',
+                'Crop Yield Increase': '35% average',
+                'Countries Active': '28',
+                'Investment': '$850M annually'
+            },
+            successStory: "In Kenya, smallholder farmer Joseph increased his maize yield by 300% using drought-resistant seeds and precision farming techniques. His income rose from $500 to $2,000 annually, allowing him to send his children to school and expand his farm."
         },
         nutrition: {
-            title: 'Nutrition Program Solutions',
+            title: '🍎 Nutrition Program Solutions',
             description: 'Targeted interventions to address malnutrition across all age groups',
+            icon: '🥗',
             details: [
                 'School feeding programs reaching 370 million children globally',
                 'Maternal and infant nutrition support for first 1,000 days',
@@ -203,11 +212,19 @@ function learnMore(solutionType) {
                 'Community nutrition education and behavior change',
                 'Treatment of severe acute malnutrition',
                 'Food fortification programs in partnership with industry'
-            ]
+            ],
+            statistics: {
+                'Children Fed Daily': '2.4M',
+                'Recovery Rate': '85%',
+                'Program Sites': '12,000',
+                'Annual Budget': '$1.2B'
+            },
+            successStory: "Maria's 3 children in Guatemala now attend school regularly thanks to the feeding program. Her youngest, who was severely malnourished, has fully recovered and is thriving academically."
         },
         technology: {
-            title: 'Technology-Driven Solutions',
+            title: '📱 Technology-Driven Solutions',
             description: 'Leveraging innovation to revolutionize food systems',
+            icon: '🔬',
             details: [
                 'AI-powered crop monitoring and yield prediction',
                 'Blockchain supply chain transparency and traceability',
@@ -215,11 +232,19 @@ function learnMore(solutionType) {
                 'Drone delivery of supplies to remote areas',
                 'Digital payment systems for cash transfers',
                 'Satellite early warning systems for food crises'
-            ]
+            ],
+            statistics: {
+                'Farmers Connected': '180,000',
+                'Prediction Accuracy': '92%',
+                'Digital Payments': '$45M monthly',
+                'Early Warnings': '24/7 monitoring'
+            },
+            successStory: "Using our mobile app, farmer Ahmed in Bangladesh receives real-time weather updates and market prices, increasing his profits by 40% through better timing of planting and selling."
         },
         emergency: {
-            title: 'Emergency Response Solutions',
+            title: '🤝 Emergency Response Solutions',
             description: 'Rapid response capabilities for acute food crises',
+            icon: '🚨',
             details: [
                 'Pre-positioned emergency food supplies in strategic locations',
                 'Mobile malnutrition treatment units',
@@ -227,11 +252,19 @@ function learnMore(solutionType) {
                 'Refugee camp nutrition support',
                 'Disaster risk reduction and preparedness',
                 'Coordination with government and UN agencies'
-            ]
+            ],
+            statistics: {
+                'Response Time': '48 hours',
+                'People Reached': '15M annually',
+                'Supply Hubs': '75 locations',
+                'Success Rate': '78% crisis prevention'
+            },
+            successStory: "When floods hit Bangladesh in 2024, our pre-positioned supplies reached 500,000 people within 48 hours, preventing a humanitarian crisis and saving thousands of lives."
         },
         water: {
-            title: 'Water & Sanitation Solutions',
+            title: '💧 Water & Sanitation Solutions',
             description: 'Essential infrastructure for nutrition and health',
+            icon: '🚰',
             details: [
                 'Clean water access programs in rural communities',
                 'Sanitation facilities in schools and health centers',
@@ -239,11 +272,19 @@ function learnMore(solutionType) {
                 'Hygiene education and behavior change programs',
                 'Irrigation systems for agricultural development',
                 'Emergency water supply during crises'
-            ]
+            ],
+            statistics: {
+                'People Served': '8.5M',
+                'Clean Water Points': '25,000',
+                'Health Centers': '3,400',
+                'Investment': '$680M'
+            },
+            successStory: "In rural Mali, new water systems reduced waterborne diseases by 70% and increased agricultural productivity by 45%, transforming the lives of 50,000 villagers."
         },
         education: {
-            title: 'Education & Training Solutions',
+            title: '🎓 Education & Training Solutions',
             description: 'Building knowledge and capacity for long-term food security',
+            icon: '📚',
             details: [
                 'Agricultural extension services and farmer field schools',
                 'Nutrition education for mothers and caregivers',
@@ -251,13 +292,80 @@ function learnMore(solutionType) {
                 'Community health worker training',
                 'Leadership development for women in agriculture',
                 'Policy maker capacity building on food security'
-            ]
+            ],
+            statistics: {
+                'People Trained': '125,000 annually',
+                'Training Centers': '450',
+                'Women Leaders': '15,000',
+                'Knowledge Retention': '89%'
+            },
+            successStory: "Through our women's leadership program in Rwanda, Sarah became a cooperative leader, helping 200 women increase their income by 250% through improved farming and business skills."
         }
     };
     
     const solution = solutions[solutionType];
     if (solution) {
-        alert(`${solution.title}\n\n${solution.description}\n\nKey Components:\n• ${solution.details.join('\n• ')}`);
+        showSolutionsModal(solution);
+    }
+}
+
+function showSolutionsModal(solution) {
+    const modal = document.getElementById('solutions-modal');
+    const modalBody = document.getElementById('solutions-modal-body');
+    
+    if (!modal || !modalBody) return;
+    
+    const statsHtml = Object.entries(solution.statistics)
+        .map(([key, value]) => `<div class="stat-item"><strong>${key}:</strong> ${value}</div>`)
+        .join('');
+    
+    modalBody.innerHTML = `
+        <div class="solution-modal-content">
+            <div class="solution-header">
+                <div class="solution-icon">${solution.icon}</div>
+                <div>
+                    <h2>${solution.title}</h2>
+                    <p class="solution-description">${solution.description}</p>
+                </div>
+            </div>
+            
+            <div class="solution-sections">
+                <div class="solution-section">
+                    <h3>🎯 Key Components</h3>
+                    <ul class="solution-details-list">
+                        ${solution.details.map(detail => `<li>${detail}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="solution-section">
+                    <h3>📊 Impact Statistics</h3>
+                    <div class="solution-stats">
+                        ${statsHtml}
+                    </div>
+                </div>
+                
+                <div class="solution-section">
+                    <h3>✨ Success Story</h3>
+                    <div class="success-story">
+                        <p>${solution.successStory}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="solution-actions">
+                <button class="btn" onclick="donate()">💰 Support This Program</button>
+                <button class="btn btn-transparent" onclick="volunteer()">🙋‍♀️ Get Involved</button>
+            </div>
+        </div>
+    `;
+    
+    modal.style.display = 'block';
+}
+
+function closeSolutionsModal() {
+    const modal = document.getElementById('solutions-modal');
+    if (modal) {
+        modal.style.display = 'none';
     }
 }
 
@@ -284,7 +392,7 @@ function calculateImpact() {
     const resultDiv = document.getElementById('impact-result');
     
     if (!amount || amount <= 0) {
-        resultDiv.innerHTML = '❌ Please enter a valid donation amount';
+        resultDiv.innerHTML = '⚠️ Please enter a valid donation amount';
         return;
     }
     
@@ -334,77 +442,24 @@ function formatNumber(num) {
     }
 }
 
-// Risk assessment functions
-function assessHungerRisk(region) {
-    const factors = {
-        conflict: Math.random() * 10,
-        climate: Math.random() * 10,
-        economic: Math.random() * 10,
-        governance: Math.random() * 10,
-        infrastructure: Math.random() * 10
-    };
+// Close modals when clicking outside
+window.onclick = function(event) {
+    const detailsModal = document.getElementById('details-modal');
+    const solutionsModal = document.getElementById('solutions-modal');
     
-    const totalRisk = Object.values(factors).reduce((sum, factor) => sum + factor, 0) / 5;
-    
-    if (totalRisk > 7) return 'critical';
-    if (totalRisk > 5) return 'high';
-    if (totalRisk > 3) return 'medium';
-    return 'low';
+    if (event.target == detailsModal) {
+        detailsModal.style.display = 'none';
+    }
+    if (event.target == solutionsModal) {
+        solutionsModal.style.display = 'none';
+    }
 }
 
-// Data export functions
-function exportHungerData() {
-    const dataStr = JSON.stringify(hungerData, null, 2);
-    const dataBlob = new Blob([dataStr], {type: 'application/json'});
-    const url = URL.createObjectURL(dataBlob);
+// Initialize dashboard updates
+document.addEventListener('DOMContentLoaded', function() {
+    // Update dashboard every 30 seconds
+    setInterval(updateDashboard, 30000);
     
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'zero_hunger_data.json';
-    link.click();
-    
-    URL.revokeObjectURL(url);
-}
-
-// Reporting functions
-function generateReport() {
-    const report = {
-        generatedAt: new Date().toISOString(),
-        summary: {
-            totalAffected: hungerData.regions.reduce((sum, region) => sum + region.affected, 0),
-            criticalRegions: hungerData.regions.filter(r => r.risk === 'critical').length,
-            improvingRegions: hungerData.regions.filter(r => r.trend === 'improving').length
-        },
-        recommendations: [
-            'Scale emergency assistance in Afghanistan, Yemen, and South Sudan',
-            'Strengthen early warning systems in moderate-risk areas',
-            'Continue supporting successful programs in improving regions',
-            'Increase funding for long-term resilience building',
-            'Enhance coordination between humanitarian partners'
-        ]
-    };
-    
-    console.log('Generated Report:', report);
-    return report;
-}
-
-// Search and filter functions
-function searchRegions(query) {
-    return hungerData.regions.filter(region => 
-        region.name.toLowerCase().includes(query.toLowerCase())
-    );
-}
-
-function filterByRisk(riskLevel) {
-    return hungerData.regions.filter(region => region.risk === riskLevel);
-}
-
-// Prediction algorithms
-function predictHungerTrends(region, timeframe) {
-    // Simplified prediction model
-    const baselineRisk = assessHungerRisk(region);
-    const climateImpact = Math.random() * 2 - 1; // -1 to +1
-    const economicTrend = Math.random() * 2 - 1;
-    const conflictRisk = Math.random() * 2 - 1;
-    
-    const prediction = {
+    // Initial update
+    updateDashboard();
+});
