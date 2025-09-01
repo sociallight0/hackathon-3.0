@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Hunger - End World Hunger Together</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">🌍 Zero Hunger</div>
+            <div class="nav-links">
+                <a onclick="scrollToSection('tracker')">Hunger Tracker</a>
+                <a onclick="scrollToSection('solutions')">Solutions</a>
+                <a onclick="scrollToSection('partners')">Partners</a>
+                <a onclick="scrollToSection('impact')">Impact</a>
+                <a onclick="scrollToSection('dashboard')">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Zero Hunger</h1>
+            <p>Working together to end world hunger by 2030</p>
+            
+            <!-- Hero Images -->
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Child in need of nutrition support" class="impact-image">
+                    <div class="image-caption">Every child deserves proper nutrition</div>
+                </div>
+                <div class="hero-image-card">
+                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mother and child facing food insecurity" class="impact-image">
+                    <div class="image-caption">Families need our support</div>
+                </div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">828M</div>
+                    <div class="stat-label">People facing hunger worldwide</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3.1B</div>
+                    <div class="stat-label">Cannot afford healthy diet</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">45M</div>
+                    <div class="stat-label">Children under 5 wasted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">149M</div>
+                    <div class="stat-label">Children under 5 stunted</div>
+                </div>
+            </div>
+            <button class="btn" onclick="scrollToSection('tracker')">Start Tracking Hunger</button>
+        </div>
+    </section>
+
+    <section id="tracker" class="section">
+        <div class="container">
+            <h2>🗺️ Global Hunger Risk Tracker</h2>
+            <div class="hunger-tracker">
+                <h3>Real-time Hunger Risk Assessment</h3>
+                <p>Monitor regions at risk of food insecurity using AI-powered predictive analytics</p>
+                
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <h3>🌍 Interactive World Map</h3>
+                        <p>Click on regions to view detailed hunger risk data</p>
+                        <div class="loading-animation"></div>
+                        <p>Loading real-time data...</p>
+                    </div>
+                </div>
+                
+                <div class="risk-indicators">
+                    <div class="risk-card risk-high">
+                        <h4>🔴 Critical Risk Areas</h4>
+                        <p><strong>Afghanistan, Yemen, South Sudan</strong></p>
+                        <p>Immediate intervention required. Conflict, climate disasters, and economic collapse.</p>
+                        <button class="btn" onclick="showDetails('high')">View Details</button>
+                    </div>
+                    <div class="risk-card risk-medium">
+                        <h4>🟡 Moderate Risk Areas</h4>
+                        <p><strong>Haiti, Somalia, Nigeria</strong></p>
+                        <p>Monitoring required. Economic instability and climate vulnerability.</p>
+                        <button class="btn" onclick="showDetails('medium')">View Details</button>
+                    </div>
+                    <div class="risk-card risk-low">
+                        <h4>🟢 Improving Areas</h4>
+                        <p><strong>Bangladesh, Ethiopia, Rwanda</strong></p>
+                        <p>Positive trends with continued support needed.</p>
+                        <button class="btn" onclick="showDetails('low')">View Details</button>
+                    </div>
+                </div>
+                
+                <div id="details-modal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <div id="modal-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions" class="section">
+        <div class="container">
+            <h2>💡 Our Solutions</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-image">🌾</div>
+                    <div class="solution-content">
+                        <h3>Sustainable Agriculture</h3>
+                        <p>Supporting smallholder farmers with climate-resilient crops, modern farming techniques, and market access to increase food production sustainably.</p>
+                        <button class="btn" onclick="learnMore('agriculture')">Learn More</button>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-image">🍎</div>
+                    <div class="solution-content">
+                        <h3>Nutrition Programs</h3>
+                        <p>School feeding programs, maternal nutrition support, and micronutrient supplementation to address malnutrition at its roots.</p>
+                        <button class="btn" onclick="learnMore('nutrition')">Learn More</button>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-image">📱</div>
+                    <div class="solution-content">
+                        <h3>Technology Solutions</h3>
+                        <p>AI-powered crop monitoring, blockchain food tracking, and mobile apps connecting farmers to markets and resources.</p>
+                        <button class="btn" onclick="learnMore('technology')">Learn More</button>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-image">🤝</div>
+                    <div class="solution-content">
+                        <h3>Emergency Response</h3>
+                        <p>Rapid deployment of food assistance during crises, refugee support, and disaster preparedness programs.</p>
+                        <button class="btn" onclick="learnMore('emergency')">Learn More</button>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-image">💧</div>
+                    <div class="solution-content">
+                        <h3>Water & Sanitation</h3>
+                        <p>Clean water access and sanitation programs that improve nutrition outcomes and reduce waterborne diseases.</p>
+                        <button class="btn" onclick="learnMore('water')">Learn More</button>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-image">🎓</div>
+                    <div class="solution-content">
+                        <h3>Education & Training</h3>
+                        <p>Agricultural training, nutrition education, and capacity building for sustainable food security.</p>
+                        <button class="btn" onclick="learnMore('education')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="section">
+        <div class="container">
+            <h2>💫 Impact Stories</h2>
+            
+            <!-- Real images showing the reality of hunger -->
+            <div class="hunger-reality">
+                <div class="reality-card">
+                    <img src="https://images.unsplash.com/photo-1594736797933-d0ce71a6295e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Malnourished child receiving medical care" class="reality-image">
+                    <div class="reality-content">
+                        <h3>The Reality We're Fighting</h3>
+                        <p>45 million children under 5 suffer from acute malnutrition worldwide. Your support provides life-saving treatment and prevention programs.</p>
+                    </div>
+                </div>
+                <div class="reality-card">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Elderly person in food line" class="reality-image">
+                    <div class="reality-content">
+                        <h3>Vulnerable Populations</h3>
+                        <p>Elderly people, pregnant women, and children are most at risk. Our programs prioritize these vulnerable groups with targeted nutrition support.</p>
+                    </div>
+                </div>
+                <div class="reality-card">
+                    <img src="https://images.unsplash.com/photo-1573379710038-e06df7b5e0fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Empty food bowls" class="reality-image">
+                    <div class="reality-content">
+                        <h3>Empty Plates, Empty Futures</h3>
+                        <p>828 million people go to bed hungry every night. Together, we can change this reality and build a world where everyone has enough to eat.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="impact-stories">
+                <div class="story-card">
+                    <img src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Kenyan farmer in his field" class="story-image-real">
+                    <div class="story-content">
+                        <h3>Farmer Success in Kenya</h3>
+                        <p>"Thanks to drought-resistant seeds and mobile market access, I've tripled my harvest and can now feed my family year-round." - Joseph, Smallholder Farmer</p>
+                        <div class="alert alert-success">
+                            <strong>Impact:</strong> 500% increase in income, 12 families supported
+                        </div>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Children eating in school feeding program" class="story-image-real">
+                    <div class="story-content">
+                        <h3>School Feeding Program</h3>
+                        <p>"My children now attend school regularly and are healthier than ever. The school meals program changed our lives." - Maria, Mother of 3</p>
+                        <div class="alert alert-success">
+                            <strong>Impact:</strong> 95% school attendance, improved nutrition for 10,000 children
+                        </div>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <img src="https://images.unsplash.com/photo-1559223607-a43d19acba05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Healthcare worker treating malnourished child" class="story-image-real">
+                    <div class="story-content">
+                        <h3>Malnutrition Treatment</h3>
+                        <p>"The mobile health clinic saved my baby's life. Now she's growing strong and healthy." - Amina, New Mother</p>
+                        <div class="alert alert-success">
+                            <strong>Impact:</strong> 85% recovery rate, 5,000 children treated
+                        </div>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Woman entrepreneur with vegetables" class="story-image-real">
+                    <div class="story-content">
+                        <h3>Women's Empowerment</h3>
+                        <p>"The microfinance program helped me start my own vegetable garden. Now I feed my community." - Sarah, Entrepreneur</p>
+                        <div class="alert alert-success">
+                            <strong>Impact:</strong> 200 women entrepreneurs, 1,000 families fed
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Critical Impact Section with Real Images -->
+    <section class="section crisis-section">
+        <div class="container">
+            <h2>🚨 The Crisis We Face</h2>
+            <p style="text-align: center; font-size: 1.3rem; margin-bottom: 50px; color: #666;">
+                These images show the reality of hunger around the world. Together, we can change this.
+            </p>
+            
+            <div class="crisis-grid">
+                <div class="crisis-card">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Elderly hands holding empty bowl" class="crisis-image">
+                    <div class="crisis-overlay">
+                        <h3>828 Million People</h3>
+                        <p>Go to bed hungry every night</p>
+                    </div>
+                </div>
+                <div class="crisis-card">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Malnourished child" class="crisis-image">
+                    <div class="crisis-overlay">
+                        <h3>45 Million Children</h3>
+                        <p>Suffer from acute malnutrition</p>
+                    </div>
+                </div>
+                <div class="crisis-card">
+                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mother with malnourished child" class="crisis-image">
+                    <div class="crisis-overlay">
+                        <h3>3.1 Billion People</h3>
+                        <p>Cannot afford a healthy diet</p>
+                    </div>
+                </div>
+                <div class="crisis-card">
+                    <img src="https://images.unsplash.com/photo-1594736797933-d0ce71a6295e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Child receiving medical treatment for malnutrition" class="crisis-image">
+                    <div class="crisis-overlay">
+                        <h3>149 Million Children</h3>
+                        <p>Are stunted due to malnutrition</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3 style="color: #e74c3c; margin-bottom: 20px;">Every 10 seconds, a child dies from hunger-related causes</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">But it doesn't have to be this way. Your action can save lives.</p>
+                <button class="btn" onclick="donate()" style="font-size: 1.3rem; padding: 20px 40px;">💝 Save Lives Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="partners" class="section">
+        <div class="container">
+            <h2>🤝 Our Partners</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px;">
+                Working with leading organizations to maximize impact
+            </p>
+            <div class="organizations">
+                <div class="org-card">
+                    <div class="org-logo">WFP</div>
+                    <h3>World Food Programme</h3>
+                    <p>Leading humanitarian organization fighting hunger worldwide, reaching 100+ million people annually.</p>
+                    <a href="#" class="btn">Partner With Us</a>
+                </div>
+                <div class="org-card">
+                    <div class="org-logo">FAO</div>
+                    <h3>Food & Agriculture Organization</h3>
+                    <p>UN agency leading efforts to defeat hunger and improve nutrition and food security globally.</p>
+                    <a href="#" class="btn">Partner With Us</a>
+                </div>
+                <div class="org-card">
+                    <div class="org-logo">🏥</div>
+                    <h3>UNICEF</h3>
+                    <p>Protecting children's rights and addressing malnutrition in vulnerable communities worldwide.</p>
+                    <a href="#" class="btn">Partner With Us</a>
+                </div>
+                <div class="org-card">
+                    <div class="org-logo">🌱</div>
+                    <h3>Oxfam</h3>
+                    <p>Fighting inequality and poverty, working to ensure everyone has access to nutritious food.</p>
+                    <a href="#" class="btn">Partner With Us</a>
+                </div>
+                <div class="org-card">
+                    <div class="org-logo">❤️</div>
+                    <h3>Action Against Hunger</h3>
+                    <p>Saving lives through acute malnutrition treatment and emergency response programs.</p>
+                    <a href="#" class="btn">Partner With Us</a>
+                </div>
+                <div class="org-card">
+                    <div class="org-logo">🌾</div>
+                    <h3>World Vision</h3>
+                    <p>Christian humanitarian organization working to address root causes of hunger and poverty.</p>
+                    <a href="#" class="btn">Partner With Us</a>
+                </div>
+                <div class="org-card">
+                    <div class="org-logo">🌍</div>
+                    <h3>Save the Children</h3>
+                    <p>Protecting children from malnutrition and ensuring access to nutritious food globally.</p>
+                    <a href="#" class="btn">Partner With Us</a>
+                </div>
+                <div class="org-card">
+                    <div class="org-logo">🏛️</div>
+                    <h3>World Bank</h3>
+                    <p>Financing development projects that strengthen food systems and reduce poverty worldwide.</p>
+                    <a href="#" class="btn">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard" class="section">
+        <div class="container">
+            <h2>📊 Live Impact Dashboard</h2>
+            <div class="dashboard">
+                <h3>Real-time Global Impact Metrics</h3>
+                <div class="dashboard-grid">
+                    <div class="metric-card">
+                        <div class="metric-value" id="people-fed">2.4M</div>
+                        <div>People Fed Today</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="programs-active">156</div>
+                        <div>Active Programs</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="countries-reached">45</div>
+                        <div>Countries Reached</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="funds-raised">$2.8B</div>
+                        <div>Funds Raised</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="meals-distributed">12.5M</div>
+                        <div>Meals Distributed</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="farmers-trained">45K</div>
+                        <div>Farmers Trained</div>
+                    </div>
+                </div>
+                
+                <div class="alerts-container">
+                    <div class="alert alert-danger">
+                        <strong>🚨 Critical Alert:</strong> Severe drought in East Africa affecting 4.2M people. Emergency response activated.
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <strong>⚠️ Watch Alert:</strong> Food prices rising 15% in West Africa due to supply chain disruptions.
+                    </div>
+                    
+                    <div class="alert alert-success">
+                        <strong>✅ Success:</strong> School feeding program in Bangladesh reaches 1 million children milestone.
+                    </div>
+                </div>
+
+                <div class="prediction-panel">
+                    <h4>🔮 AI Hunger Predictions (Next 6 Months)</h4>
+                    <div class="predictions-grid">
+                        <div class="prediction-item">
+                            <span class="prediction-region">Chad</span>
+                            <span class="prediction-risk risk-increasing">📈 Risk Increasing</span>
+                            <span class="prediction-confidence">89% confidence</span>
+                        </div>
+                        <div class="prediction-item">
+                            <span class="prediction-region">Madagascar</span>
+                            <span class="prediction-risk risk-stable">➡️ Risk Stable</span>
+                            <span class="prediction-confidence">76% confidence</span>
+                        </div>
+                        <div class="prediction-item">
+                            <span class="prediction-region">Guatemala</span>
+                            <span class="prediction-risk risk-decreasing">📉 Risk Decreasing</span>
+                            <span class="prediction-confidence">82% confidence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: white;">Take Action Now</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 40px;">Every action counts. Together, we can achieve Zero Hunger by 2030.</p>
+            <div class="action-buttons">
+                <button class="btn btn-white" onclick="donate()">💰 Donate Now</button>
+                <button class="btn btn-transparent" onclick="volunteer()">🙋‍♀️ Volunteer</button>
+                <button class="btn btn-transparent" onclick="partner()">🤝 Become a Partner</button>
+                <button class="btn btn-transparent" onclick="advocate()">📢 Advocate</button>
+            </div>
+            
+            <div class="donation-impact" style="margin-top: 50px;">
+                <h3>Your Impact Calculator</h3>
+                <div class="impact-calculator">
+                    <input type="number" id="donation-amount" placeholder="Enter amount ($)" min="1" style="padding: 15px; border-radius: 10px; border: none; margin: 10px; font-size: 1.1rem;">
+                    <button class="btn btn-white" onclick="calculateImpact()">Calculate Impact</button>
+                    <div id="impact-result" style="margin-top: 20px; font-size: 1.2rem;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>📈 Progress Tracking</h2>
+            <div class="progress-container">
+                <div class="progress-card">
+                    <h3>SDG 2: Zero Hunger Progress</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 23%"></div>
+                    </div>
+                    <p>23% progress towards 2030 goal</p>
+                </div>
+                
+                <div class="progress-metrics">
+                    <div class="metric-item">
+                        <h4>Malnutrition Reduction</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 31%"></div>
+                        </div>
+                        <p>31% reduction since 2015</p>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <h4>Agricultural Productivity</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                        <p>45% increase in supported regions</p>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <h4>Food Security Access</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 38%"></div>
+                        </div>
+                        <p>38% improvement in access</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Zero Hunger</h3>
+                    <a href="#">Our Mission</a>
+                    <a href="#">Impact Report</a>
+                    <a href="#">Annual Report</a>
+                    <a href="#">Transparency</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Get Involved</h3>
+                    <a href="#">Donate</a>
+                    <a href="#">Volunteer</a>
+                    <a href="#">Fundraise</a>
+                    <a href="#">Corporate Partnership</a>
+                    <a href="#">Advocacy</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="#">Research & Data</a>
+                    <a href="#">Policy Briefs</a>
+                    <a href="#">Educational Materials</a>
+                    <a href="#">Press Kit</a>
+                    <a href="#">API Documentation</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="#">Newsletter</a>
+                    <a href="#">Social Media</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Press Inquiries</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zero Hunger Initiative. Together towards a hunger-free world.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
